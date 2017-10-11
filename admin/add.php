@@ -6,6 +6,7 @@ if (isset($_POST['submit'])) {
 
 	if (empty($item)) {
 		echo "Enter something To do";
+	
 	} else {
 		$addItem = new ToDoList(0);
 		$addItem->setItem($item);
