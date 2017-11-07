@@ -13,8 +13,8 @@ class ConnectDb
 	{
 		$this->mysqli = new mysqli($this->host, $this->user, $this->password, $this->dbName);
 
-		if ($this->mysql->connect_error) {
-			di('Connect Error (' . $mysqli->connect_errno . ') ' . $mysqli->connect_error);
+		if ($this->mysqli->connect_error) {
+			di('Connect Error (' . $this->mysqli->connect_errno . ') ' . $this->mysqli->connect_error);
 		}
 	}
 	public static function getInstance()
@@ -22,7 +22,7 @@ class ConnectDb
 		if (!self::$instance) {
 			self::$instance = new ConnectDb();
 		}
-		return self::$insance;
+		return self::$instance;
 	}
 	public function getConnection()
 	{
